@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add WeChat User</title>
+</head>
+<body>
+    <h1>Add WeChat User</h1>
+    <button onclick="addWeChatUser()">Add Me on WeChat</button>
+
+    <script>
+        function addWeChatUser() {
+            // 替换 YOUR_WECHAT_ID 为您的微信号
+            var weChatId = "ILJQ0425";
+            // 构建添加微信好友的链接
+            var weChatUrl = "weixin://add/" + weChatId;
+            
+            // 尝试在微信客户端中打开链接
+            window.location.href = weChatUrl;
+
+            // 如果无法在微信客户端中打开链接，给出提示
+            setTimeout(function() {
+                if (document.hidden) {
+                    alert("请在微信客户端中使用此功能。");
+                }
+            }, 2000); // 2秒后检查页面是否在前台，如果不是则提示
+        }
+    </script>
+</body>
+</html>
